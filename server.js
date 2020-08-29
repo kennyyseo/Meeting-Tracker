@@ -40,7 +40,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", indexRouter);
-app.use("/", meetingsRouter);
+app.use("/meetings", meetingsRouter);
 app.use("/notes", notesRouter);
 
 // catch 404 and forward to error handler

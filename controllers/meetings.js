@@ -18,7 +18,10 @@ function index(req, res) {
 }
 
 function newMeeting(req, res) {
-  res.render("meetings/new", { title: "Add Meeting" });
+  const newMeeting = new Meeting();
+  const mt = newMeeting.meetingDate;
+  const mtgDate = mt.toISOString().slice(0, 16);
+  res.render("meetings/new", { title: "Add Meeting", mtgDate });
 }
 
 function create(req, res) {
@@ -65,12 +68,15 @@ function update(req, res) {
 
 function show(req, res) {
   Meeting.findById(req.params.id, function (err, meeting) {
-    Note.find({ meeting: meeting._id }, function (err, meetings) {
-      res.render("meetings/show", {
-        meetings,
-        title: "Meeting Details",
-        meeting,
-      });
+    res.render("meetings/show", {
+      title: "Meeting Details",
+      meeting,
     });
+  });
+}
+
+function index(req, res) {
+  Meeting.find({}, function (err, meetings) {
+    res.render("meetings/index", { title: "All Meetings", meetings });
   });
 }

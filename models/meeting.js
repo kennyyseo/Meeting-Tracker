@@ -2,7 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const meetingSchema = new Schema({
-  date: Date,
+  meetingDate: {
+    type: Date,
+    default: function () {
+      return Date.now();
+    },
+  },
   agency: String,
   repsMet: String,
   stage: String,

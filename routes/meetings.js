@@ -2,7 +2,7 @@ const router = require("express").Router();
 const meetingsCtrl = require("../controllers/meetings");
 
 /* GET users listing. */
-router.get("/meetings", meetingsCtrl.index);
+router.get("/", meetingsCtrl.index);
 router.get("/new", meetingsCtrl.new);
 router.get("/:id", meetingsCtrl.show);
 router.post("/", meetingsCtrl.create);

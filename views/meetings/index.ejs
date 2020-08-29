@@ -9,14 +9,14 @@
   </head>
 
   <body>
-    <a href="/meeting/new">Add Meeting</a>
+    <a href="/meetings/new">Add Meeting</a>
     <h1>Meetings:</h1>
     <table>
       <thead>
         <tr>
           <th id="deleteMeeting">Remove Meeting</th>
           <th id="moreInfo">More Info</th>
-          <th id="date">Date</th>
+          <th id="meetingDate">Date</th>
           <th id="agency">Agency</th>
           <th id="reps">Reps</th>
           <th id="stage">Stage</th>
@@ -35,10 +35,8 @@
             </form>
           </td>
           <td>
-            <a href="/meeetings/<%=m._id%>">Details</a>&nbsp;|&nbsp;<a
-              href="/meetings/<%=m._id%>/edit"
-              >Edit</a
-            >
+            <a href="/meeetings/<%=m._id%>">Details</a>&nbsp;|&nbsp;
+            <a href="/meetings/<%=m._id%>/edit">Edit</a>
           </td>
           <td><%= m.date %></td>
           <td><%= m.agency %></td>

@@ -11,7 +11,7 @@
 
 <section id="show-page">
     <div>Date:</div>
-    <div><%= meeting.date %></div>
+    <div><%= meeting.meetingDate %></div>
     <div>Agency:</div>
     <div><%= meeting.agency %></div>
     <div>Rating:</div>
@@ -21,7 +21,7 @@
 </section>
 
 <br /><br />
-<h2>Notes</h2>
+<h2>Notes:</h2>
 <form id="add-notes-form" method="POST" action="/meetings/<%= meeting._id %>/notes">
     <label>Notes:</label>
     <textarea name="content"></textarea>
@@ -32,7 +32,7 @@
 <table>
     <thead>
         <tr>
-            <th>Note</th>
+            <th>Notes:</th>
         </tr>
     </thead>
     <tbody>

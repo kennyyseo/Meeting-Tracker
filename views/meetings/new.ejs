@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%= title %></title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <img src="/images/camera.svg">
-        <a href="/performers/new" <%- title === 'Add Performer' ? 'class="active"' : '' %>>ADD PERFORMER</a>
-        <a href="/movies/new" <%- title === 'Add Movie' ? 'class="active"' : '' %>>ADD MOVIE</a>
-        <a href="/movies" <%- title === 'All Movies' ? 'class="active"' : '' %>>ALL MOVIES</a>
+      <a href="/meetings">All Meetings</a>
     </nav>
     <main>
-        <h1><%= title %></h1>
+      <h1><%= title %></h1>
 
-
-<form id="new-form" action="/flights" method="POST">
-    <label>Date:</label>
-    <input type="text" name="date" />
-    <label>Agency:</label>
-    <select name="agency">
-        <option value="Saatchi">Saatchi</option>
-        <option value="Team One">Team One</option>
-        <option value="Horizon">Horizon</option>
-        <option value="Zenith">Zenith</option>
-        <option value="RPA">RPA</option>
-        <option value="Starcom">Starcom</option>
-        <option value="GP Generate">GP Generate</option>
-    </select>
-    <label>Reps:</label>
-    <input type="text" name="repsMet" />
-    <label>Stage:</label>
-    <select name="agency">
-        <option value="10%">10%</option>
-        <option value="30%">30%</option>
-        <option value="50%">50%</option>
-        <option value="70%">70%</option>
-        <option value="90%">90%</option>
-        <option value="100%">100%</option>
-    </select>
-</form>
-
-</main>
-</body>
-
+      <form id="new-form" action="/flights" method="POST">
+        <label
+          >Date:
+          <input
+            type="datetime-local"
+            name="meetingDate"
+            value="<%= mtgDate %>"
+          />
+        </label>
+        <br />
+        <br />
+        <label>Agency:</label>
+        <select name="agency">
+          <option value="Saatchi">Saatchi</option>
+          <option value="Team One">Team One</option>
+          <option value="Horizon">Horizon</option>
+          <option value="Zenith">Zenith</option>
+          <option value="RPA">RPA</option>
+          <option value="Starcom">Starcom</option>
+          <option value="GP Generate">GP Generate</option>
+          <option value="Other">Other</option>
+        </select>
+        <br />
+        <br />
+        <label>Reps Met:</label>
+        <input type="text" name="repsMet" />
+        <br />
+        <br />
+        <label>Stage:</label>
+        <select name="agency">
+          <option value="0%">0%</option>
+          <option value="10%">10%</option>
+          <option value="30%">30%</option>
+          <option value="50%">50%</option>
+          <option value="70%">70%</option>
+          <option value="90%">90%</option>
+          <option value="100%">100%</option>
+        </select>
+        <br />
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </main>
+  </body>
 </html>
