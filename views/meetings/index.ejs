@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Meeting Tracker</title>
+  </head>
+
+  <body>
+    <a href="/meeting/new">Add Meeting</a>
+    <h1>Meetings:</h1>
+    <table>
+      <thead>
+        <tr>
+          <th id="deleteMeeting">Remove Meeting</th>
+          <th id="moreInfo">More Info</th>
+          <th id="date">Date</th>
+          <th id="agency">Agency</th>
+          <th id="reps">Reps</th>
+          <th id="stage">Stage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% meetings.forEach(function(m) { %>
+        <tr>
+          <td>
+            <form
+              action="/meetings/<%= m.id %>?_method=DELETE"
+              class="delete-form"
+              method="POST"
+            >
+              <button type="submit">Remove</button>
+            </form>
+          </td>
+          <td>
+            <a href="/meeetings/<%=m._id%>">Details</a>&nbsp;|&nbsp;<a
+              href="/meetings/<%=m._id%>/edit"
+              >Edit</a
+            >
+          </td>
+          <td><%= m.date %></td>
+          <td><%= m.agency %></td>
+          <td><%= m.repsMet %></td>
+          <td><%= m.stage %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>

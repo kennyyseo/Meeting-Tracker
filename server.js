@@ -1,10 +1,10 @@
-const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const passport = require("passport");
+const createError = require("http-errors");
 const methodOverride = require("method-override");
 
 require("dotenv").config();
@@ -22,12 +22,12 @@ const notesRouter = require("./routes/notes");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use(methodOverride("_method"));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
-app.use(methodOverride("_method"));
 app.use(
   session({
     secret: "SEIRocks",
@@ -35,12 +35,13 @@ app.use(
     saveUninitialized: true,
   })
 );
+
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", indexRouter);
-app.use("/meetings", meetingsRouter);
-app.use("/", notesRouter);
+app.use("/", meetingsRouter);
+app.use("/notes", notesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
