@@ -1,5 +1,5 @@
 const Meeting = require("../models/meeting");
-const Note = require("../models/note");
+// const Note = require("../models/note");
 
 module.exports = {
   index,
@@ -25,9 +25,13 @@ function newMeeting(req, res) {
 }
 
 function create(req, res) {
+  //   req.body.user = req.user._id
+  console.log(req.body);
   const meeting = new Meeting(req.body);
   meeting.save(function (err) {
-    if (err) res.render("/meetings/new");
+    if (err) {
+      return res.redirect("/meetings/new");
+    }
     res.redirect("/meetings");
   });
 }
@@ -40,7 +44,7 @@ function deleteMeeting(req, res) {
 }
 
 function edit(req, res) {
-  Meeting.findById(req.params.id, function (err, flight) {
+  Meeting.findById(req.params.id, function (err, meeting) {
     if (err) {
       res.redirect(`/meetings/${req.params.id}`);
     }
@@ -72,11 +76,5 @@ function show(req, res) {
       title: "Meeting Details",
       meeting,
     });
-  });
-}
-
-function index(req, res) {
-  Meeting.find({}, function (err, meetings) {
-    res.render("meetings/index", { title: "All Meetings", meetings });
   });
 }

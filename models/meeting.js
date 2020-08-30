@@ -12,6 +12,7 @@ const meetingSchema = new Schema({
   repsMet: String,
   stage: String,
   notes: [{ type: Schema.Types.ObjectId, ref: "Notes" }],
+  //   user: { type: Schema.Types.ObjectId, ref: "User" },
 });
 
 module.exports = mongoose.model("Meeting", meetingSchema);

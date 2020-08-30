@@ -1,8 +1,34 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(17, 159, 89);
+  color: white;
 }
 
 a {
-  color: #00B7FF;
+  color: salmon;
+}
+
+#moreInfo {
+  padding-right: 50px;
+}
+
+#meetingDate {
+  padding-right: 140px;
+}
+
+#agency {
+  padding-right: 50px;
+}
+
+#repsMet {
+  padding-right: 50px;
+}
+
+#stage {
+  padding-right: 50px;
+}
+
+#deleteMeeting {
+  padding-right: 50px;
 }

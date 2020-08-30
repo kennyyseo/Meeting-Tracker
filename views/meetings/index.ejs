@@ -16,10 +16,10 @@
         <tr>
           <th id="deleteMeeting">Remove Meeting</th>
           <th id="moreInfo">More Info</th>
-          <th id="meetingDate">Date</th>
           <th id="agency">Agency</th>
-          <th id="reps">Reps</th>
+          <th id="repsMet">Reps</th>
           <th id="stage">Stage</th>
+          <th id="meetingDate">Date</th>
         </tr>
       </thead>
       <tbody>
@@ -35,13 +35,13 @@
             </form>
           </td>
           <td>
-            <a href="/meeetings/<%=m._id%>">Details</a>&nbsp;|&nbsp;
+            <a href="/meetings/<%=m._id%>">Details</a>&nbsp;|&nbsp;
             <a href="/meetings/<%=m._id%>/edit">Edit</a>
           </td>
-          <td><%= m.date %></td>
           <td><%= m.agency %></td>
           <td><%= m.repsMet %></td>
           <td><%= m.stage %></td>
+          <td><%= m.meetingDate%></td>
         </tr>
         <% }); %>
       </tbody>

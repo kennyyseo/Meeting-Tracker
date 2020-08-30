@@ -9,12 +9,17 @@
     <title><%= title %></title>
 </head>
 
+    <nav>
+        <a href="/meetings">All Meetings</a>
+        <a href="/meetings/new">Add Meeting</a>
+    </nav>
+<br>
 <section id="show-page">
     <div>Date:</div>
     <div><%= meeting.meetingDate %></div>
     <div>Agency:</div>
     <div><%= meeting.agency %></div>
-    <div>Rating:</div>
+    <div>Reps Met:</div>
     <div><%= meeting.repsMet %></div>
     <div>Stage:</div>
     <div><%= meeting.stage %></div>
@@ -43,7 +48,7 @@
 </table>
 <% } else { %>
 <h5>No meetings yet - get on it!</h5>
-
+<% } %>
 </main>
 </body>
 
