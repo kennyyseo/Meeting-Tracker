@@ -45,7 +45,7 @@
 <% } else { %>
 <h4>No notes yet - get on it!</h5>
 <% } %>
-<form id="add-notes-form" method="POST" action="/meetings/<%= meeting._id %>/notes">
+<form id="add-note-form" method="POST" action="/meetings/<%= meeting._id %>/notes">
     <textarea name="content"></textarea>
     <br>
     <br>

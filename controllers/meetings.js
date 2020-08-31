@@ -62,13 +62,14 @@ function update(req, res) {
     meeting
   ) {
     if (err) {
+      console.log(err);
       res.render("meetings/edit", {
         meeting,
         title: "Edit Meeting",
         mtgDate: meeting.meetingDate.toISOString().slice(0, 16),
       });
     }
-    res.redirect(`meetings`);
+    res.redirect("/meetings");
   });
 }
 
