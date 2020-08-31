@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Meeting Tracker</title>
+</head>
+
+    <nav>
+        <a href="/meetings">All Meetings</a>
+        <a href="/meetings/new">Add Meeting</a>
+    </nav>
+
+<br>
+<br>
+
+<body>
+    <form action="/meetings/<%= meeting.id %>?_method=PUT" method="POST">
+        <label for="agency">Edit Agency:
+            <select name="agency">
+                <option <%= meeting.agency === "Saatchi" ? "selected":"" %> value="Saatchi">Saatchi</option>
+                <option <%= meeting.agency === "Team One" ? "selected":"" %> value="Team One">Team One</option>
+                <option <%= meeting.agency === "Horizon" ? "selected":"" %> value="Horizon">Horizon</option>
+                <option <%= meeting.agency === "Zenith" ? "selected":"" %> value="Zenith">Zenith</option>
+                <option <%= meeting.agency === "RPA" ? "selected":"" %> value="RPA">RPA</option>
+                <option <%= meeting.agency === "Starcom" ? "selected":"" %> value="Starcom">Starcom</option>
+                <option <%= meeting.agency === "GP Generate" ? "selected":"" %> value="GP Generate">GP Generate</option>
+                <option <%= meeting.agency === "Other" ? "selected":"" %> value="Other">Other</option>
+            </select>
+        </label>
+        <br>
+        <br>
+        <label for="repsMet">Edit Reps:
+            <input type="text" name="repsMet" value="<%= meeting.repsMet %>">
+        </label>
+        <br>
+        <br>
+        <label for="stage">Edit Stage
+            <select name="stage">
+                <option <%= meeting.stage === "0%" ? "selected":"" %>>0%</option>
+                <option <%= meeting.stage === "10%" ? "selected":"" %>>10%</option>
+                <option <%= meeting.stage === "30%" ? "selected":"" %>>30%</option>
+                <option <%= meeting.stage === "50%" ? "selected":"" %>>50%</option>
+                <option <%= meeting.stage === "70%" ? "selected":"" %>>70%</option>
+                <option <%= meeting.stage === "90%" ? "selected":"" %>>90%</option>
+                <option <%= meeting.stage === "100%" ? "selected":"" %>>100%</option>
+            </select>
+        </label>
+        <br>
+        <br>
+        <label for="meetingDate">Edit Date:
+            <input type="datetime-local" name="meetingDate" value="<%= mtgDate %>">
+        </label>
+        <br>
+        <br>
+        <button class="submit-button" type="submit">Accept Changes</button>
+    </form>
+
+</body>
+
+</html>

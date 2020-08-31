@@ -9,12 +9,30 @@
   </head>
 
   <body>
+    <nav>
+      <div>
+        <ul class="right">
+          <li>
+            <% if (user) { %>
+            <a href="/logout"
+              ><i class="material-icons left">trending_flat</i>Log Out</a
+            >
+            <% } else { %>
+            <a href="/auth/google"
+              ><i class="material-icons left"></i>Login with Google</a
+            >
+            <% } %>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <a href="/meetings/new">Add Meeting</a>
     <h1>Meetings:</h1>
     <table>
       <thead>
         <tr>
           <th id="deleteMeeting">Remove Meeting</th>
+          <th id="editMeeting">Edit Meeting</th>
           <th id="moreInfo">More Info</th>
           <th id="agency">Agency</th>
           <th id="repsMet">Reps</th>
@@ -34,10 +52,8 @@
               <button type="submit">Remove</button>
             </form>
           </td>
-          <td>
-            <a href="/meetings/<%=m._id%>">Details</a>&nbsp;|&nbsp;
-            <a href="/meetings/<%=m._id%>/edit">Edit</a>
-          </td>
+          <td><a href="/meetings/<%=m._id%>/edit">Edit</a></td>
+          <td><a href="/meetings/<%=m._id%>">Details</a></td>
           <td><%= m.agency %></td>
           <td><%= m.repsMet %></td>
           <td><%= m.stage %></td>

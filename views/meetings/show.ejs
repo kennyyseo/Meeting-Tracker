@@ -15,40 +15,43 @@
     </nav>
 <br>
 <section id="show-page">
-    <div>Date:</div>
-    <div><%= meeting.meetingDate %></div>
-    <div>Agency:</div>
-    <div><%= meeting.agency %></div>
-    <div>Reps Met:</div>
-    <div><%= meeting.repsMet %></div>
-    <div>Stage:</div>
-    <div><%= meeting.stage %></div>
+    <div><span id=two>Agency:</span>&nbsp;&nbsp;<%= meeting.agency %></div>
+    <br>
+    <div><span id=three>Reps Met:</span>&nbsp;&nbsp;<%= meeting.repsMet %></div>
+    <br>
+    <div><span id=four>Stage:</span>&nbsp;&nbsp;<%= meeting.stage %></div>
+    <br>
+    <div><span id=one>Date:</span>&nbsp;&nbsp;<%= meeting.meetingDate %></div>
 </section>
 
-<br /><br />
+<br />
 <h2>Notes:</h2>
-<form id="add-notes-form" method="POST" action="/meetings/<%= meeting._id %>/notes">
-    <label>Notes:</label>
-    <textarea name="content"></textarea>
-    <input type="submit" value="Add Note" />
-</form>
 
 <% if (meeting.notes.length) { %>
 <table>
     <thead>
         <tr>
-            <th>Notes:</th>
+            <th>Details</th>
         </tr>
     </thead>
     <tbody>
+        <% meeting.notes.forEach(function(n) { %>
         <tr>
             <td><%= n.content %></td>
         </tr>
+        <% }); %>
     </tbody>
 </table>
 <% } else { %>
-<h5>No meetings yet - get on it!</h5>
+<h4>No notes yet - get on it!</h5>
 <% } %>
+<form id="add-notes-form" method="POST" action="/meetings/<%= meeting._id %>/notes">
+    <textarea name="content"></textarea>
+    <br>
+    <br>
+    <input type="submit" value="Add Note" />
+</form>
+<br>
 </main>
 </body>
 

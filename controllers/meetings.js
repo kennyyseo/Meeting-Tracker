@@ -51,6 +51,7 @@ function edit(req, res) {
     res.render("meetings/edit", {
       meeting,
       title: "Edit Meeting",
+      mtgDate: meeting.meetingDate.toISOString().slice(0, 16),
     });
   });
 }
@@ -64,6 +65,7 @@ function update(req, res) {
       res.render("meetings/edit", {
         meeting,
         title: "Edit Meeting",
+        mtgDate: meeting.meetingDate.toISOString().slice(0, 16),
       });
     }
     res.redirect(`meetings`);

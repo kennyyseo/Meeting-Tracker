@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const noteSchema = new Schema({
+  content: String,
+});
+
 const meetingSchema = new Schema({
   meetingDate: {
     type: Date,
@@ -8,10 +12,25 @@ const meetingSchema = new Schema({
       return Date.now();
     },
   },
-  agency: String,
+  agency: {
+    type: String,
+    enum: [
+      "Saatchi",
+      "Team One",
+      "Horizon",
+      "Zenith",
+      "RPA",
+      "Starcom",
+      "GP Generate",
+      "Other",
+    ],
+  },
   repsMet: String,
-  stage: String,
-  notes: [{ type: Schema.Types.ObjectId, ref: "Notes" }],
+  stage: {
+    type: String,
+    enum: ["0%", "10%", "30%", "50%", "70%", "90%", "100%"],
+  },
+  notes: [noteSchema],
   //   user: { type: Schema.Types.ObjectId, ref: "User" },
 });
 
