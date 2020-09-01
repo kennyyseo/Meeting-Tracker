@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const noteSchema = new Schema({
   content: String,
+  user: { type: Schema.Types.ObjectId, ref: "User" },
 });
 
 const meetingSchema = new Schema({

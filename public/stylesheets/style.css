@@ -12,6 +12,7 @@ body {
   background-image: url(https://i.imgur.com/H9GGigo.jpg);
   background-size: cover;
   color: black;
+  font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -20,14 +21,6 @@ a {
 
 a:hover {
   color: #0088a9;
-}
-
-#one,
-#two,
-#three,
-#four {
-  font-size: 16px;
-  font-weight: bold;
 }
 
 #removeNote {
@@ -42,12 +35,14 @@ a:hover {
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px black;
+  animation: transitionIn 1.5s;
 }
 
 .meeting-table thead tr {
   width: 100%;
-  font-size: 1.5em;
+  font-size: 1.75em;
   text-align: left;
+  font-weight: bold;
   background-color: #669db3ff;
 }
 
@@ -127,4 +122,27 @@ header {
   text-align: center;
   padding: 150px 0 0 0;
   font-size: 30px;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-50deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+.video-background {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
 }

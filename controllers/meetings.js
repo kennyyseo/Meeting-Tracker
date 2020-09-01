@@ -1,5 +1,4 @@
 const Meeting = require("../models/meeting");
-// const Note = require("../models/note");
 
 module.exports = {
   index,
@@ -75,9 +74,11 @@ function update(req, res) {
 
 function show(req, res) {
   Meeting.findById(req.params.id, function (err, meeting) {
+    if (err) console.log(err);
     res.render("meetings/show", {
       title: "Meeting Details",
       meeting,
+      user: req.user,
     });
   });
 }

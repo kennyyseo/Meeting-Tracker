@@ -25,9 +25,16 @@
         <% meeting.notes.forEach(function(n) { %>
         <tr>
             <td>
-                <form class=delete-form method="POST">
-                    <button type="submit">Remove</button>
-                </form>
+                <% meeting.notes.forEach(function(note, idx) { %>
+                    <div class="note">
+                        <%= note.text %><br>
+                        <% if (note.user.equals(user._id)) { %>
+                            <form action="/notes/<%= meeting._id %>/<%= idx %>?_method=DELETE" class=delete-form method="POST">
+                             <button type="submit">Remove</button>
+                            </form>
+                        <% } %>
+                    </div>
+                <% }) %>
             </td>
             <td><%= n.content %></td>
             
