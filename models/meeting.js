@@ -31,7 +31,7 @@ const meetingSchema = new Schema({
     enum: ["0%", "10%", "30%", "50%", "70%", "90%", "100%"],
   },
   notes: [noteSchema],
-  //   user: { type: Schema.Types.ObjectId, ref: "User" },
+  user: { type: Schema.Types.ObjectId, ref: "User" },
 });
 
 module.exports = mongoose.model("Meeting", meetingSchema);

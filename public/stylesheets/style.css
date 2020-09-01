@@ -1,12 +1,12 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(17, 159, 89);
+  background-color: rgb(34, 66, 65);
   color: white;
 }
 
 a {
-  color: salmon;
+  color: rgb(179, 100, 100);
 }
 
 #moreInfo {
@@ -47,4 +47,8 @@ a {
 
 .right {
   list-style-type: none;
+}
+
+#removeNote {
+  padding-right: 50px;
 }
