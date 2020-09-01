@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-            <link rel="stylesheet" href="/stylesheets/style.css" />
-            <title>Meeting Tracker</title>
-        </head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Meeting Tracker</title>
+  </head>
 
-        <body>
-            <nav>
-                <a href="/meetings">All Meetings</a>
-                <a href="/meetings/new">Add Meeting</a>
-                <div>
-                    <ul class="right">
-                        <li>
-                            <% if (user) { %>
-                                <a href="/logout"
-                                    style="float: right;"></i>Log Out</a
-            >
-                        <% } else { %>
-                            <a href="/auth/google" style="float: right;"
-                            >Login with Google</a
-                            >
-                            <% } %>
-          </li>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li class="links"><a href="/meetings">All Meetings</a></li>
+          <li class="links"><a href="/meetings/new">Add Meeting</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+      <% if (user) { %>
+      <a class="log" href="/logout"
+        ><button class="log-button">Log Out</button></a
+      >
+
+      <% } else { %>
+      <a class="log" href="/auth/google"
+        ><button class="log-button">Log in with Google</button></a
+      >
+      <% } %>
+    </header>
+  </body>
+</html>

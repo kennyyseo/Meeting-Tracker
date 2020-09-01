@@ -1,40 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(34, 66, 65);
-  color: white;
+  background-image: url(https://i.imgur.com/H9GGigo.jpg);
+  background-size: cover;
+  color: black;
 }
 
 a {
-  color: rgb(179, 100, 100);
+  color: #ff4f58ff;
 }
 
-#moreInfo {
-  padding-right: 50px;
-}
-
-#meetingDate {
-  padding-right: 140px;
-}
-
-#agency {
-  padding-right: 50px;
-}
-
-#repsMet {
-  padding-right: 50px;
-}
-
-#stage {
-  padding-right: 50px;
-}
-
-#editMeeting {
-  padding-right: 50px;
-}
-
-#deleteMeeting {
-  padding-right: 50px;
+a:hover {
+  color: #0088a9;
 }
 
 #one,
@@ -45,10 +30,101 @@ a {
   font-weight: bold;
 }
 
-.right {
-  list-style-type: none;
-}
-
 #removeNote {
   padding-right: 50px;
+}
+
+.meeting-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 100%;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px black;
+}
+
+.meeting-table thead tr {
+  width: 100%;
+  font-size: 1.5em;
+  text-align: left;
+  background-color: #669db3ff;
+}
+
+.meeting-table th,
+.meeting-table td {
+  padding: 12px 15px;
+}
+
+.meeting-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.meeting-table tbody tr:nth-of-type(odd) {
+  background-color: white;
+}
+
+.meeting-table tbody tr:nth-of-type(even) {
+  background-color: #e3e3e3;
+}
+
+.meeting-table tbody tr:last-of-type {
+  border-bottom: 2px solid #669db3ff;
+}
+
+.links,
+.log,
+.log-button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+.log-button {
+  color: black;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 30px 0;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav-links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+  color: #0088a9;
+}
+
+.log-button {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.log-button:hover {
+  background-color: rgba(0, 136, 169, 0.7);
+}
+
+.greeting {
+  text-align: center;
+  padding: 150px 0 0 0;
+  font-size: 30px;
 }

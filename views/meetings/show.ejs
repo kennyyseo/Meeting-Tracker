@@ -25,7 +25,7 @@
         <% meeting.notes.forEach(function(n) { %>
         <tr>
             <td>
-                <form class="delete-form" method="POST">
+                <form class=delete-form method="POST">
                     <button type="submit">Remove</button>
                 </form>
             </td>
@@ -40,7 +40,7 @@
 <% } %>
 <br>
 <h4>Add Note:</h4>
-<form id="add-note-form" method="POST" action="/meetings/<%= meeting._id %>/notes" size="100">
+<form id="add-note-form" method="POST" action="/meetings/<%= meeting._id %>/notes">
     <textarea name="content"></textarea>
     <br>
     <br>

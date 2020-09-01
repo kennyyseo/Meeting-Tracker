@@ -1,4 +1,4 @@
-const Meeting = require("../models/meeting");
+const Note = require("../models/meeting");
 
 module.exports = {
   create,
