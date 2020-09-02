@@ -13,7 +13,6 @@ body {
   background-size: cover;
   color: black;
   font-family: "Montserrat", sans-serif;
-  text-align: center;
 }
 
 a {
@@ -154,8 +153,31 @@ header {
 }
 
 #title {
-  color: black;
+  color: white;
   font-weight: bold;
   font-size: 40px;
-  text-shadow: 2px 2px 2px white;
+  text-align: center;
+  width: 345px;
+  background-color: rgba(0, 136, 169, 1);
+  border-radius: 5px;
+  border: 2px solid black;
+  margin: 0 auto;
+}
+
+td {
+  text-align: center;
+}
+
+#new-title {
+  color: white;
+  width: 250px;
+  background-color: rgba(0, 136, 169, 1);
+  border-radius: 5px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.meeting-table tbody tr:hover td,
+.meeting-table tbody tr:hover {
+  background-color: rgba(168, 218, 219);
 }
