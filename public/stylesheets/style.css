@@ -13,6 +13,7 @@ body {
   background-size: cover;
   color: black;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 
 a {
@@ -41,7 +42,7 @@ a:hover {
 .meeting-table thead tr {
   width: 100%;
   font-size: 1.75em;
-  text-align: left;
+  text-align: center;
   font-weight: bold;
   background-color: #669db3ff;
 }
@@ -78,7 +79,8 @@ a:hover {
 }
 
 .log-button {
-  color: black;
+  color: white;
+  font-weight: bold;
 }
 
 header {
@@ -136,13 +138,24 @@ header {
   }
 }
 
-.video-background {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1;
+#removeBtn {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  color: white;
+  font-weight: bold;
+}
+
+#removeBtn:hover {
+  background-color: rgba(0, 136, 169, 0.7);
+}
+
+#title {
+  color: black;
+  font-weight: bold;
+  font-size: 40px;
+  text-shadow: 2px 2px 2px white;
 }

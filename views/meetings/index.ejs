@@ -1,6 +1,8 @@
 <%- include('../partials/header') %>
 
-<h1>Meetings:</h1>
+<h1 id="title">All Meetings:</h1>
+<br />
+<br />
 <table class="meeting-table">
   <thead>
     <tr>
@@ -22,7 +24,7 @@
           class="delete-form"
           method="POST"
         >
-          <button type="submit">Remove</button>
+          <button id="removeBtn" type="submit">Remove</button>
         </form>
       </td>
       <td><a href="/meetings/<%=m._id%>/edit">Edit</a></td>
