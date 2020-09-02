@@ -12,7 +12,11 @@ module.exports = {
 
 function index(req, res) {
   Meeting.find({}, function (err, meetings) {
-    res.render("meetings/index", { title: "All Meetings", meetings });
+    res.render("meetings/index", {
+      title: "All Meetings",
+      meetings,
+      user: req.user,
+    });
   });
 }
 
@@ -24,7 +28,7 @@ function newMeeting(req, res) {
 }
 
 function create(req, res) {
-  //   req.body.user = req.user._id
+  req.body.user = req.user;
   console.log(req.body);
   const meeting = new Meeting(req.body);
   meeting.save(function (err) {

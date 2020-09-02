@@ -14,7 +14,8 @@
     </tr>
   </thead>
   <tbody>
-    <% meetings.forEach(function(m) { %>
+    <% meetings.forEach(function(m) { %> <% if (m.user.toString() ===
+    user._id.toString()) { %>
     <tr>
       <td>
         <form
@@ -32,7 +33,7 @@
       <td><%= m.stage %></td>
       <td><%= m.meetingDate%></td>
     </tr>
-    <% }); %>
+    <% } %> <% }); %>
   </tbody>
 </table>
 
