@@ -3,7 +3,8 @@
   <h1 id="new-title"><%= title %></h1>
   <br />
   <br />
-
+  <br />
+  <br />
   <form id="new-form" action="/meetings" method="POST">
     <label
       >Date:
@@ -40,7 +41,11 @@
     </select>
     <br />
     <br />
-    <input type="submit" value="Submit" />
+    <br />
+    <br />
+    <div>
+      <input id="addBtn" type="submit" value="Submit" />
+    </div>
   </form>
 </main>
 <%- include('../partials/footer') %>

@@ -1,18 +1,21 @@
 <%- include('../partials/header') %>
 <br>
+<h2>Meeting Details</h2>
+<br>
 <section id="show-page">
-    <div><span id=two>Agency:</span>&nbsp;&nbsp;<%= meeting.agency %></div>
+    <div class="mtgdet"><b>Agency:</b>&nbsp;&nbsp;<%= meeting.agency %></div>
     <br>
-    <div><span id=three>Reps Met:</span>&nbsp;&nbsp;<%= meeting.repsMet %></div>
+    <div class="mtgdet"><b>Reps Met:</b>&nbsp;&nbsp;<%= meeting.repsMet %></div>
     <br>
-    <div><span id=four>Stage:</span>&nbsp;&nbsp;<%= meeting.stage %></div>
+    <div class="mtgdet"><b>Stage:</b>&nbsp;&nbsp;<%= meeting.stage %></div>
     <br>
-    <div><span id=one>Date:</span>&nbsp;&nbsp;<%= meeting.meetingDate %></div>
+    <div class="mtgdet"><b>Date:</b>&nbsp;&nbsp;<%= meeting.meetingDate %></div>
 </section>
-
+<br>
+<br>
 <br />
 <h2>Notes:</h2>
-
+<br>
 <% if (meeting.notes.length) { %>
 <table>
     <thead>
@@ -22,36 +25,35 @@
         </tr>
     </thead>
     <tbody>
-        <% meeting.notes.forEach(function(n) { %>
+        <% meeting.notes.forEach(function(n, idx) { %>
         <tr>
             <td>
-                <% meeting.notes.forEach(function(note, idx) { %>
                     <div class="note">
-                        <%= note.text %><br>
-                        <% if (note.user.equals(user._id)) { %>
+                        <% if (n.user.equals(user._id)) { %>
                             <form action="/notes/<%= meeting._id %>/<%= idx %>?_method=DELETE" class=delete-form method="POST">
-                             <button type="submit">Remove</button>
+                             <button id="delete-note-button" type="submit">Remove</button>
                             </form>
                         <% } %>
                     </div>
-                <% }) %>
             </td>
-            <td><%= n.content %></td>
+            <td id="note-content"><%= n.content %></td>
             
         </tr>
         <% }); %>
     </tbody>
 </table>
+
 <% } else { %>
 <h4>No notes yet - get on it!</h5>
 <% } %>
 <br>
-<h4>Add Note:</h4>
+<br>
+<h2>Add Note:</h2>
 <form id="add-note-form" method="POST" action="/meetings/<%= meeting._id %>/notes">
     <textarea name="content"></textarea>
     <br>
     <br>
-    <input type="submit" value="Submit" />
+    <input id="submit-button" type="submit" value="Submit" />
 </form>
 
 </main>

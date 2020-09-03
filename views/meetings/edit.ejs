@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
-
+<h1 id="title">Edit Details</h1>
 <br>
 <br>
 
 <body>
-    <form action="/meetings/<%= meeting.id %>?_method=PUT" method="POST">
+    <form id="edit-details" action="/meetings/<%= meeting.id %>?_method=PUT" method="POST">
         <label for="agency">Edit Agency:
             <select name="agency">
                 <option <%= meeting.agency === "Saatchi" ? "selected":"" %> value="Saatchi">Saatchi</option>
@@ -42,7 +42,7 @@
         </label>
         <br>
         <br>
-        <button class="submit-button" type="submit">Accept Changes</button>
+        <button id="accept-edits-button" type="submit">Accept Changes</button>
     </form>
 
 <%- include('../partials/footer') %>
