@@ -18,7 +18,7 @@ JavaScript, HTML, CSS, Mongoose, Express, Node
 
 https://meeting-logger.herokuapp.com/
 
-Log in through Google, then add feel free to customize your dashboard with your recent activity.
+Log in through Google, then feel free to customize your dashboard with your recent activity.
 
 ## **Next Steps**:
 
