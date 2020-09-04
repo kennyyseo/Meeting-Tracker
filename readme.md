@@ -12,7 +12,7 @@ After logging in through Google, you can add, edit, and delete meetings all with
 
 ## **Technologies Used**:
 
-JavaScript, HTML, CSS, Mongoose, Express, Node
+JavaScript, HTML, CSS, Mongoose, Express, Node, Google Oauth
 
 ## **Getting Started**:
 
