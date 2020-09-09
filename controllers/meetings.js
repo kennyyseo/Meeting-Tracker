@@ -11,7 +11,7 @@ module.exports = {
 };
 
 function index(req, res) {
-  Meeting.find({}, function (err, meetings) {
+  Meeting.find({ user: req.user._id }, function (err, meetings) {
     res.render("meetings/index", {
       title: "All Meetings",
       meetings,
